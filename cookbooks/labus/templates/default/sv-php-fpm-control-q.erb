@@ -1,0 +1,3 @@
+#!/bin/sh
+echo "received QUIT from runit, sending TERM instead to force quit connections"
+/opt/gitlab/embedded/bin/sv terminate php-fpm

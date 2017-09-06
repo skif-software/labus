@@ -1,0 +1,27 @@
+dn: dc=<%= node['hostname']  %>,dc=<%= node['domain']  %>
+objectClass: dcObject
+objectClass: organization
+dc: <%= node['hostname']  %>
+o: Example Corporation
+description: The Example Corporation
+structuralObjectClass: organization
+
+dn: cn=<%= node['labus']['ldap']['admin'] %>,dc=<%= node['hostname']  %>,dc=<%= node['domain']  %>
+objectClass: organizationalRole
+cn: <%= node['labus']['ldap']['admin'] %>
+description: LDAP Manager and Administrator
+structuralObjectClass: organizationalRole
+
+dn: ou=users,dc=<%= node['hostname']  %>,dc=<%= node['domain']  %>
+ou: users
+description: All people in organisation
+objectclass: organizationalunit
+
+dn: cn=Serge Salamanka,ou=users,dc=<%= node['hostname']  %>,dc=<%= node['domain']  %>
+objectclass: inetOrgPerson
+cn: Serge Salamanka
+sn: serge
+givenName: Serge
+displayName: Salamanka
+userpassword: nopassword
+mail: salsa-dev@tut.by

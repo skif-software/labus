@@ -1,0 +1,115 @@
+#!/bin/sh
+#
+# Perform necessary gitlab setup steps
+# after package is installed.
+#
+
+PROGNAME=$(basename $0)
+DEST_DIR=<%= install_dir %>
+usr_bin_symlinks="\
+  ${DEST_DIR}/bin/gitlab-ctl \
+  ${DEST_DIR}/bin/gitlab-rake \
+  ${DEST_DIR}/bin/gitlab-rails \
+  ${DEST_DIR}/bin/gitlab-ci-rake \
+  ${DEST_DIR}/bin/gitlab-ci-rails \
+"
+symlink_command="ln -sf ${usr_bin_symlinks} /usr/bin/"
+
+# Try collecting fqdn if it is set correctly
+fqdn=$(/bin/hostname -f)
+if [ -n "${fqdn}" ]; then
+  external_url="http://${fqdn}"
+else
+  external_url="http://gitlab.example.com"
+fi
+
+error_exit()
+{
+  echo "${PROGNAME}: ${1:-"Unknown Error"}" 1>&2
+  exit 1
+}
+
+notify()
+{
+  echo "gitlab: $1"
+}
+
+create_symlinks()
+{
+  ${symlink_command} || error_exit "Failed to create symlinks in /usr/bin"
+}
+
+create_config_template()
+{
+  # Create a minimal gitlab.rb template if /etc/gitlab/gitlab.rb does not exist.
+  if ! [ -e /etc/gitlab/gitlab.rb ] ; then
+    mkdir -p /etc/gitlab
+    cp "${DEST_DIR}/etc/gitlab.rb.template" /etc/gitlab/gitlab.rb
+    sed -i 's!GENERATED_EXTERNAL_URL!'$external_url'!g' /etc/gitlab/gitlab.rb
+    chmod 600 /etc/gitlab/gitlab.rb
+  fi
+}
+
+fix_directory_permissions()
+{
+  if [ -x /usr/bin/dpkg-query ] ; then
+    # We are in the land of .deb packages. We should fix package directory owners
+    # because of the faulty 7.2.0 / 7.2.1 .deb packages.
+    /usr/bin/dpkg-query -L gitlab-ce gitlab-ee 2>/dev/null | while read f ; do
+    if [ -d "$f" ] ; then
+      # This directory may have been created when installing omnibus-gitlab
+      # 7.2.0 / 7.2.1, so it could have the wrong owner.
+      chown root:root "$f"
+    fi
+  done
+fi
+}
+
+print_welcome()
+{
+  notify "Thank you for installing GitLab!"
+  notify "Configure and start GitLab by running the following command:"
+  notify
+  notify "sudo gitlab-ctl reconfigure"
+  notify
+  notify "GitLab should be reachable at ${external_url}"
+  notify "Otherwise configure GitLab for your system by editing /etc/gitlab/gitlab.rb file"
+  notify "And running reconfigure again."
+  notify
+  notify "For a comprehensive list of configuration options please see the Omnibus GitLab readme"
+  notify "https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/README.md"
+  notify
+}
+
+if [ -n "${GITLAB_DEBUG}" ] ; then
+  notify "debug: arguments: $@"
+fi
+
+create_symlinks
+create_config_template
+fix_directory_permissions
+print_welcome
+
+case "$1" in
+  2)
+    # Looks like an RPM upgrade
+    ${DEST_DIR}/bin/gitlab-ctl upgrade
+    ;;
+  configure)
+    # Looks like a DEB install. We don't know if it is a fresh install or an
+    # upgrade.
+    ${DEST_DIR}/bin/gitlab-ctl upgrade
+    ;;
+  *)
+    if [ -x /bin/rpm ] ; then
+      # This might be a fresh RPM install, replacing the legacy 'gitlab' package.
+      # The postuninstall script of 'gitlab' will clobber our symlinks, so we
+      # kindly ask the user to recreate them.
+      notify
+      notify "If you just upgraded from GitLab 7.9 or earlier, please run the following"
+      notify "command:"
+      notify
+      notify "sudo ${symlink_command}"
+    fi
+    ;;
+esac

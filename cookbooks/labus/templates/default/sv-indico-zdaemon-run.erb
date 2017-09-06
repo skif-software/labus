@@ -1,0 +1,9 @@
+#!/bin/sh
+exec 2>&1
+<%= render("mount_point_check.erb") %>
+
+export PATH=$PATH:<%= node['labus']['labus-indico']['home_dir'] %>/bin
+
+#exec chpst -P <%= node['labus']['labus-indico']['home_dir'] %>/bin/zdaemon -C <%= node['labus']['labus-indico']['work_dir'] %>/etc/zdctl.conf start
+exec chpst -u <%= @options[:username] %> -P <%= @options[:home_dir]%>/bin/python <%= @options[:home_dir]%>/bin/runzeo -C <%= @options[:work_dir]%>/etc/zodb.conf
+

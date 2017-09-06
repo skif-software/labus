@@ -1,0 +1,10 @@
+<runner>
+  program       runzeo -C <%= @work_dir %>/etc/zodb.conf
+  user		<%= @username %>
+  daemon        false
+  directory     <%= @work_dir %>/db
+  socket-name   <%= @work_dir %>/db/zdsock
+</runner>
+<environment>
+  PYTHON_EGG_CACHE <%= @work_dir %>/tmp/egg-cache
+</environment>

@@ -1,0 +1,6 @@
+<% if node['labus']['high-availability']['mountpoint'] %>
+if ! mountpoint -q '<%= node['labus']['high-availability']['mountpoint'] %>' ; then
+  echo 'Refusing to start because <%= node['labus']['high-availability']['mountpoint'] %> is not a mountpoint.'
+  exit 1
+fi
+<% end %>

@@ -1,0 +1,16 @@
+[uwsgi]
+pythonpath = /opt/gitlab/embedded/service/indico
+processes = 4
+threads = 2
+wsgi-file = /opt/gitlab/embedded/service/indico/htdocs/indico.wsgi
+post-buffering = 1
+autoload = true
+master = true
+workers = 2
+no-orphans = true
+pidfile = /tmp/indico.pid
+socket = /var/opt/labus/labus-indico/indico.socket
+chmod-socket = 660
+log-date = true
+uid = labus-indico
+gid = labus-www

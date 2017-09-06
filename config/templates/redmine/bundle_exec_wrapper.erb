@@ -1,0 +1,29 @@
+#!/bin/sh
+
+error_echo()
+{
+  echo "$1" 2>& 1
+}
+
+labus_redmine_rc='<%= install_dir %>/etc/labus-redmine/labus-redmine-rc'
+if ! [ -f ${labus_redmine_rc} ] ; then
+  error_echo "$0 error: could not load ${labus_redmine_rc}"
+  error_echo "Either you are not allowed to read the file, or it does not exist yet."
+  error_echo "You can generate it with:   sudo gitlab-ctl reconfigure"
+  exit 1
+fi
+
+. ${labus_redmine_rc}
+
+cd <%= install_dir %>/embedded/service/labus-redmine
+
+if [ "$(id -n -u)" = "${labus_redmine_user}" ] ; then
+  # We are already running at the intended privilege; don't try to drop
+  # privileges again because only root can do that (and we are apparently not
+  # root!).
+  privilege_drop=''
+else
+  privilege_drop="-u ${labus_redmine_user}"
+fi
+
+exec <%= install_dir %>/embedded/bin/chpst -e <%= install_dir %>/etc/labus-redmine/env ${privilege_drop} -U ${labus_redmine_user} <%= install_dir %>/embedded/bin/bundle exec <%= command %>

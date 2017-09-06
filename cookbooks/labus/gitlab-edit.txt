@@ -1,0 +1,8 @@
+in Gitlab omnibus code:
+1. change in Gitlab its config location
+2. change dna.json to point to [labus]
+3. check Gitlab module library on any changes
+
+in Labus template for Gitlab config:
+1. disable nginx in Gitlab config
+

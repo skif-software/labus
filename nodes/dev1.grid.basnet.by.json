@@ -1,0 +1,2198 @@
+{
+  "name": "dev1.grid.basnet.by",
+  "normal": {
+    "tags": [
+
+    ]
+  },
+  "default": {
+    "gitlab-omnibus-builder": {
+      "username": "gitlab_ci_multi_runner",
+      "home": "/home/gitlab_ci_multi_runner",
+      "projects": [
+        "gitlab"
+      ],
+      "ruby_version": "2.1.6",
+      "rubygems_version": "2.4.8",
+      "bundler_version": "1.9.9",
+      "ee_source_host_key": "dev.gitlab.org,109.107.38.152 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCutTK+e1IDw7eE+HXrhGLh0Alk/pHAnjFVVFhgkNembw3bfq3pBkW1p+kwbjy0dwNOMw45AugRzYnUxVa5OpYn2fcjV6nIl//5IQpqFeVsUfW2dhHVSVS+ojO5KhgRSzsS0z5mcjA1Vj/UAb7iS0xsiI37fL8szS2IO72RT3AsEPzJJ3oFANwJQVL1z6wQ3HKQ8V5ctcp9vWjs76gkxuckRw2+TFLthQyxT4vP/J7UbGjdYfdeplgsLni0L1wXv6gxeIRt/PciOOHmqEmHEcmzPBuSr/3RzlTTxE9mdOq8cO9xYGCrEzs7R/hrp6KUjeFqDoEnGUE91m3iCQyv6qtb",
+      "ee_source_deploy_privatekey": "secret",
+      "packagecloud_url": "https://packages.gitlab.com",
+      "packagecloud_token": "secret",
+      "aws_access_key_id": "secret",
+      "aws_secret_access_key": "secret"
+    }
+  },
+  "automatic": {
+    "network": {
+      "interfaces": {
+        "lo": {
+          "mtu": "65536",
+          "flags": [
+            "LOOPBACK",
+            "UP",
+            "LOWER_UP"
+          ],
+          "encapsulation": "Loopback",
+          "addresses": {
+            "127.0.0.1": {
+              "family": "inet",
+              "prefixlen": "8",
+              "netmask": "255.0.0.0",
+              "scope": "Node"
+            },
+            "::1": {
+              "family": "inet6",
+              "prefixlen": "128",
+              "scope": "Node"
+            }
+          },
+          "state": "unknown"
+        },
+        "eth0": {
+          "type": "eth",
+          "number": "0",
+          "mtu": "1500",
+          "flags": [
+            "BROADCAST",
+            "MULTICAST",
+            "UP",
+            "LOWER_UP"
+          ],
+          "encapsulation": "Ethernet",
+          "addresses": {
+            "00:15:17:1F:6E:A8": {
+              "family": "lladdr"
+            },
+            "80.94.170.71": {
+              "family": "inet",
+              "prefixlen": "25",
+              "netmask": "255.255.255.128",
+              "broadcast": "80.94.170.127",
+              "scope": "Global"
+            },
+            "fe80::215:17ff:fe1f:6ea8": {
+              "family": "inet6",
+              "prefixlen": "64",
+              "scope": "Link"
+            }
+          },
+          "state": "up",
+          "arp": {
+            "80.94.170.28": "00:15:17:de:5b:79",
+            "80.94.170.29": "00:15:17:b9:f2:d1",
+            "80.94.170.72": "00:15:17:1f:64:7c",
+            "80.94.170.7": "52:54:00:09:33:8a",
+            "80.94.170.13": "00:04:23:e7:c6:40",
+            "80.94.170.1": "00:22:55:18:06:80",
+            "80.94.170.14": "00:04:23:e7:c6:40"
+          },
+          "routes": [
+            {
+              "destination": "default",
+              "family": "inet",
+              "via": "80.94.170.1"
+            },
+            {
+              "destination": "80.94.170.0/25",
+              "family": "inet",
+              "scope": "link",
+              "proto": "kernel",
+              "src": "80.94.170.71"
+            },
+            {
+              "destination": "fe80::/64",
+              "family": "inet6",
+              "metric": "256",
+              "proto": "kernel"
+            }
+          ]
+        },
+        "eth1": {
+          "type": "eth",
+          "number": "1",
+          "mtu": "1500",
+          "flags": [
+            "BROADCAST",
+            "MULTICAST"
+          ],
+          "encapsulation": "Ethernet",
+          "addresses": {
+            "00:15:17:1F:6E:A9": {
+              "family": "lladdr"
+            }
+          },
+          "state": "down"
+        }
+      },
+      "default_interface": "eth0",
+      "default_gateway": "80.94.170.1"
+    },
+    "counters": {
+      "network": {
+        "interfaces": {
+          "lo": {
+            "rx": {
+              "bytes": "683606",
+              "packets": "1052",
+              "errors": "0",
+              "drop": "0",
+              "overrun": "0"
+            },
+            "tx": {
+              "bytes": "683606",
+              "packets": "1052",
+              "errors": "0",
+              "drop": "0",
+              "carrier": "0",
+              "collisions": "0"
+            }
+          },
+          "eth0": {
+            "tx": {
+              "queuelen": "1000",
+              "bytes": "435062909",
+              "packets": "1059377",
+              "errors": "0",
+              "drop": "0",
+              "carrier": "0",
+              "collisions": "0"
+            },
+            "rx": {
+              "bytes": "3410376730",
+              "packets": "13922776",
+              "errors": "0",
+              "drop": "15419",
+              "overrun": "0"
+            }
+          },
+          "eth1": {
+            "tx": {
+              "queuelen": "1000",
+              "bytes": "0",
+              "packets": "0",
+              "errors": "0",
+              "drop": "0",
+              "carrier": "0",
+              "collisions": "0"
+            },
+            "rx": {
+              "bytes": "0",
+              "packets": "0",
+              "errors": "0",
+              "drop": "0",
+              "overrun": "0"
+            }
+          }
+        }
+      }
+    },
+    "ipaddress": "80.94.170.71",
+    "macaddress": "00:15:17:1F:6E:A8",
+    "kernel": {
+      "name": "Linux",
+      "release": "3.16.0-4-amd64",
+      "version": "#1 SMP Debian 3.16.7-ckt11-1 (2015-05-24)",
+      "machine": "x86_64",
+      "os": "GNU/Linux",
+      "modules": {
+        "iptable_filter": {
+          "size": "12536",
+          "refcount": "0"
+        },
+        "ip_tables": {
+          "size": "26011",
+          "refcount": "1"
+        },
+        "x_tables": {
+          "size": "27111",
+          "refcount": "2"
+        },
+        "nfsd": {
+          "size": "263032",
+          "refcount": "2"
+        },
+        "auth_rpcgss": {
+          "size": "51211",
+          "refcount": "1"
+        },
+        "oid_registry": {
+          "size": "12419",
+          "refcount": "1"
+        },
+        "nfs_acl": {
+          "size": "12511",
+          "refcount": "1"
+        },
+        "nfs": {
+          "size": "188136",
+          "refcount": "0"
+        },
+        "lockd": {
+          "size": "83389",
+          "refcount": "2"
+        },
+        "fscache": {
+          "size": "45542",
+          "refcount": "1"
+        },
+        "sunrpc": {
+          "size": "237402",
+          "refcount": "6"
+        },
+        "i5000_edac": {
+          "size": "16833",
+          "refcount": "0"
+        },
+        "radeon": {
+          "size": "1345162",
+          "refcount": "1"
+        },
+        "psmouse": {
+          "size": "99249",
+          "refcount": "0"
+        },
+        "iTCO_wdt": {
+          "size": "12831",
+          "refcount": "0"
+        },
+        "evdev": {
+          "size": "17445",
+          "refcount": "5"
+        },
+        "pcspkr": {
+          "size": "12595",
+          "refcount": "0"
+        },
+        "serio_raw": {
+          "size": "12849",
+          "refcount": "0"
+        },
+        "iTCO_vendor_support": {
+          "size": "12649",
+          "refcount": "1"
+        },
+        "edac_core": {
+          "size": "51465",
+          "refcount": "2"
+        },
+        "ioatdma": {
+          "size": "57654",
+          "refcount": "0"
+        },
+        "coretemp": {
+          "size": "12820",
+          "refcount": "0"
+        },
+        "i5k_amb": {
+          "size": "12879",
+          "refcount": "0"
+        },
+        "ttm": {
+          "size": "77862",
+          "refcount": "1"
+        },
+        "drm_kms_helper": {
+          "size": "49210",
+          "refcount": "1"
+        },
+        "drm": {
+          "size": "249955",
+          "refcount": "4"
+        },
+        "i2c_algo_bit": {
+          "size": "12751",
+          "refcount": "1"
+        },
+        "lpc_ich": {
+          "size": "20768",
+          "refcount": "0"
+        },
+        "mfd_core": {
+          "size": "12601",
+          "refcount": "1"
+        },
+        "kvm": {
+          "size": "388635",
+          "refcount": "0"
+        },
+        "shpchp": {
+          "size": "31121",
+          "refcount": "0"
+        },
+        "i2c_i801": {
+          "size": "16965",
+          "refcount": "0"
+        },
+        "i2c_core": {
+          "size": "46012",
+          "refcount": "5"
+        },
+        "ipmi_si": {
+          "size": "48709",
+          "refcount": "0"
+        },
+        "ipmi_msghandler": {
+          "size": "39917",
+          "refcount": "1"
+        },
+        "dca": {
+          "size": "13168",
+          "refcount": "1"
+        },
+        "rng_core": {
+          "size": "12733",
+          "refcount": "0"
+        },
+        "button": {
+          "size": "12944",
+          "refcount": "0"
+        },
+        "processor": {
+          "size": "28221",
+          "refcount": "0"
+        },
+        "thermal_sys": {
+          "size": "27642",
+          "refcount": "1"
+        },
+        "autofs4": {
+          "size": "35529",
+          "refcount": "2"
+        },
+        "ext4": {
+          "size": "473802",
+          "refcount": "1"
+        },
+        "crc16": {
+          "size": "12343",
+          "refcount": "1"
+        },
+        "mbcache": {
+          "size": "17171",
+          "refcount": "1"
+        },
+        "jbd2": {
+          "size": "82413",
+          "refcount": "1"
+        },
+        "sd_mod": {
+          "size": "44356",
+          "refcount": "3"
+        },
+        "crc_t10dif": {
+          "size": "12431",
+          "refcount": "1"
+        },
+        "crct10dif_generic": {
+          "size": "12581",
+          "refcount": "1"
+        },
+        "crct10dif_common": {
+          "size": "12356",
+          "refcount": "2"
+        },
+        "sg": {
+          "size": "29973",
+          "refcount": "0"
+        },
+        "sr_mod": {
+          "size": "21903",
+          "refcount": "0"
+        },
+        "cdrom": {
+          "size": "47424",
+          "refcount": "1"
+        },
+        "ata_generic": {
+          "size": "12490",
+          "refcount": "0"
+        },
+        "ata_piix": {
+          "size": "33592",
+          "refcount": "0"
+        },
+        "mptsas": {
+          "size": "47751",
+          "refcount": "2"
+        },
+        "scsi_transport_sas": {
+          "size": "33531",
+          "refcount": "1"
+        },
+        "ehci_pci": {
+          "size": "12512",
+          "refcount": "0"
+        },
+        "uhci_hcd": {
+          "size": "43499",
+          "refcount": "0"
+        },
+        "mptscsih": {
+          "size": "26657",
+          "refcount": "1"
+        },
+        "ehci_hcd": {
+          "size": "69837",
+          "refcount": "1"
+        },
+        "libata": {
+          "size": "177457",
+          "refcount": "2"
+        },
+        "mptbase": {
+          "size": "73042",
+          "refcount": "2"
+        },
+        "usbcore": {
+          "size": "195340",
+          "refcount": "3"
+        },
+        "scsi_mod": {
+          "size": "191405",
+          "refcount": "7"
+        },
+        "e1000e": {
+          "size": "212128",
+          "refcount": "0"
+        },
+        "usb_common": {
+          "size": "12440",
+          "refcount": "1"
+        },
+        "ptp": {
+          "size": "17692",
+          "refcount": "1"
+        },
+        "pps_core": {
+          "size": "17225",
+          "refcount": "1"
+        }
+      }
+    },
+    "os": "linux",
+    "os_version": "3.16.0-4-amd64",
+    "lsb": {
+      "id": "Debian",
+      "description": "Debian GNU/Linux 8.1 (jessie)",
+      "release": "8.1",
+      "codename": "jessie"
+    },
+    "platform": "debian",
+    "platform_version": "8.1",
+    "platform_family": "debian",
+    "virtualization": {
+      "systems": {
+        "kvm": "host"
+      },
+      "system": "kvm",
+      "role": "host"
+    },
+    "chef_packages": {
+      "chef": {
+        "version": "12.4.1",
+        "chef_root": "/opt/chef/embedded/apps/chef/lib"
+      },
+      "ohai": {
+        "version": "8.5.0",
+        "ohai_root": "/opt/chef/embedded/lib/ruby/gems/2.1.0/gems/ohai-8.5.0/lib/ohai"
+      }
+    },
+    "languages": {
+      "c": {
+        "gcc": {
+          "version": "4.9.2",
+          "description": "gcc version 4.9.2 (Debian 4.9.2-10) "
+        }
+      },
+      "perl": {
+        "version": "5.20.2",
+        "archname": "x86_64-linux-gnu-thread-multi"
+      },
+      "ruby": {
+        "platform": "x86_64-linux-gnu",
+        "version": "2.1.5",
+        "release_date": "2014-11-13",
+        "target": "x86_64-pc-linux-gnu",
+        "target_cpu": "x86_64",
+        "target_vendor": "pc",
+        "target_os": "linux-gnu",
+        "host": "x86_64-pc-linux-gnu",
+        "host_cpu": "x86_64",
+        "host_os": "linux-gnu",
+        "host_vendor": "pc",
+        "bin_dir": "/usr/bin",
+        "ruby_bin": "/usr/bin/ruby2.1",
+        "gems_dir": "/var/lib/gems/2.1.0",
+        "gem_bin": "/usr/bin/gem2.1"
+      },
+      "python": {
+        "version": "2.7.9",
+        "builddate": "Mar 1 2015, 12:57:24"
+      }
+    },
+    "keys": {
+      "ssh": {
+        "host_rsa_public": "AAAAB3NzaC1yc2EAAAADAQABAAABAQDg5/9BG6Q85Z3qbjQsYWCDDhU4G928oQfAhjOoUairk9fBEEdpJfr4Ovxad0c/okGkYOwLrxNvJG6J0sAkhVj0fcLyzefNFG6SXtIV395TjKU1NtGp7+mKy6DJwZfGOToW8UU3psO3yue7oPy5HjeKlS8/RTu6N2ihQeuP6uo1uWvF+9l8xvhYwsj+M85ajbFXpYS135twQYLovcicMwpiOYC6O+LNvvDgEz/2Y1JrYCWf23aUmnurStvVHTdyNAL+6hpp1G07IrYcY68pQJYVLiGvmagLjZIgysUscfEFHRMO8+ysawOHPphzsTDZde5IDZi4rzoAxngtdFnlgqxz",
+        "host_dsa_public": "AAAAB3NzaC1kc3MAAACBAOOqNOOGJQ806Rh5mWzLGnoUi2ooFI4QKNLH4ncjdYyddEm9QqceU2Ww2VZxvz/RrAQTmg39KN0IIDPIa4IS3dNcrTrYHhx5CsK0G+eUmpXWIwtY+ZaNJNsB9V4461uA+9HDvAWzeY7xaShiTqSpCaUVSGjw8HNsd7oSpK5qH+drAAAAFQD+GTB4x+fqsSLkrA+/q1cR2GIv+QAAAIBZQkiTEtVlNz+JQHUZDAH6znt/og/eHj5O0LR4q3U1OtG0Y27cyZ82ScZg/8jbkuqEUq1Jbie0CB40Xrx9ymxw94Bv1qYwdBQcUlUSFnkxqnsL7OWdD79a4ReOw7zDLFx6q+xSqkUlrmuzf9RNFlMRXdaEZHlEfJRehtO0PO1chgAAAIABPEyQWfbL7FEognVVt14QCXKsAqBLra4TpLu0QSMkdNo8bZiltVQV+MbFQOMoRHG1hDPI8QVwlJMSLdirU8IDMGPG+6OHxZsXCfC3hGHw/LpGVKB7QJxwr3Q2/IcEkvSLd98vIluD6zSAzGrONLSTR4r12/jZQ+Ah8ywy+UPCVg==",
+        "host_ecdsa_public": "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBBbWNqO3UwqiUVuDJoCfCTn4Q+/SoCZ0FigyJLTxgRBLPtKeCdhTbobif5nULl+0fUi/YHy2PP59hmdCoV/1YE4=",
+        "host_ecdsa_type": "ecdsa-sha2-nistp256",
+        "host_ed25519_public": "AAAAC3NzaC1lZDI1NTE5AAAAIBy3qTaEtTIqwMjnoFVXj0+0zkEPl/yJTFAMgUiAMw2R"
+      }
+    },
+    "etc": {
+      "passwd": {
+        "root": {
+          "dir": "/root",
+          "gid": 0,
+          "uid": 0,
+          "shell": "/bin/bash",
+          "gecos": "root"
+        },
+        "daemon": {
+          "dir": "/usr/sbin",
+          "gid": 1,
+          "uid": 1,
+          "shell": "/usr/sbin/nologin",
+          "gecos": "daemon"
+        },
+        "bin": {
+          "dir": "/bin",
+          "gid": 2,
+          "uid": 2,
+          "shell": "/usr/sbin/nologin",
+          "gecos": "bin"
+        },
+        "sys": {
+          "dir": "/dev",
+          "gid": 3,
+          "uid": 3,
+          "shell": "/usr/sbin/nologin",
+          "gecos": "sys"
+        },
+        "sync": {
+          "dir": "/bin",
+          "gid": 65534,
+          "uid": 4,
+          "shell": "/bin/sync",
+          "gecos": "sync"
+        },
+        "games": {
+          "dir": "/usr/games",
+          "gid": 60,
+          "uid": 5,
+          "shell": "/usr/sbin/nologin",
+          "gecos": "games"
+        },
+        "man": {
+          "dir": "/var/cache/man",
+          "gid": 12,
+          "uid": 6,
+          "shell": "/usr/sbin/nologin",
+          "gecos": "man"
+        },
+        "lp": {
+          "dir": "/var/spool/lpd",
+          "gid": 7,
+          "uid": 7,
+          "shell": "/usr/sbin/nologin",
+          "gecos": "lp"
+        },
+        "mail": {
+          "dir": "/var/mail",
+          "gid": 8,
+          "uid": 8,
+          "shell": "/usr/sbin/nologin",
+          "gecos": "mail"
+        },
+        "news": {
+          "dir": "/var/spool/news",
+          "gid": 9,
+          "uid": 9,
+          "shell": "/usr/sbin/nologin",
+          "gecos": "news"
+        },
+        "uucp": {
+          "dir": "/var/spool/uucp",
+          "gid": 10,
+          "uid": 10,
+          "shell": "/usr/sbin/nologin",
+          "gecos": "uucp"
+        },
+        "proxy": {
+          "dir": "/bin",
+          "gid": 13,
+          "uid": 13,
+          "shell": "/usr/sbin/nologin",
+          "gecos": "proxy"
+        },
+        "www-data": {
+          "dir": "/var/www",
+          "gid": 33,
+          "uid": 33,
+          "shell": "/usr/sbin/nologin",
+          "gecos": "www-data"
+        },
+        "backup": {
+          "dir": "/var/backups",
+          "gid": 34,
+          "uid": 34,
+          "shell": "/usr/sbin/nologin",
+          "gecos": "backup"
+        },
+        "list": {
+          "dir": "/var/list",
+          "gid": 38,
+          "uid": 38,
+          "shell": "/usr/sbin/nologin",
+          "gecos": "Mailing List Manager"
+        },
+        "irc": {
+          "dir": "/var/run/ircd",
+          "gid": 39,
+          "uid": 39,
+          "shell": "/usr/sbin/nologin",
+          "gecos": "ircd"
+        },
+        "gnats": {
+          "dir": "/var/lib/gnats",
+          "gid": 41,
+          "uid": 41,
+          "shell": "/usr/sbin/nologin",
+          "gecos": "Gnats Bug-Reporting System (admin)"
+        },
+        "nobody": {
+          "dir": "/nonexistent",
+          "gid": 65534,
+          "uid": 65534,
+          "shell": "/usr/sbin/nologin",
+          "gecos": "nobody"
+        },
+        "systemd-timesync": {
+          "dir": "/run/systemd",
+          "gid": 103,
+          "uid": 100,
+          "shell": "/bin/false",
+          "gecos": "systemd Time Synchronization,,,"
+        },
+        "systemd-network": {
+          "dir": "/run/systemd/netif",
+          "gid": 104,
+          "uid": 101,
+          "shell": "/bin/false",
+          "gecos": "systemd Network Management,,,"
+        },
+        "systemd-resolve": {
+          "dir": "/run/systemd/resolve",
+          "gid": 105,
+          "uid": 102,
+          "shell": "/bin/false",
+          "gecos": "systemd Resolver,,,"
+        },
+        "systemd-bus-proxy": {
+          "dir": "/run/systemd",
+          "gid": 106,
+          "uid": 103,
+          "shell": "/bin/false",
+          "gecos": "systemd Bus Proxy,,,"
+        },
+        "Debian-exim": {
+          "dir": "/var/spool/exim4",
+          "gid": 109,
+          "uid": 104,
+          "shell": "/bin/false",
+          "gecos": ""
+        },
+        "messagebus": {
+          "dir": "/var/run/dbus",
+          "gid": 110,
+          "uid": 105,
+          "shell": "/bin/false",
+          "gecos": ""
+        },
+        "statd": {
+          "dir": "/var/lib/nfs",
+          "gid": 65534,
+          "uid": 106,
+          "shell": "/bin/false",
+          "gecos": ""
+        },
+        "sshd": {
+          "dir": "/var/run/sshd",
+          "gid": 65534,
+          "uid": 107,
+          "shell": "/usr/sbin/nologin",
+          "gecos": ""
+        },
+        "opergrid": {
+          "dir": "/home/opergrid",
+          "gid": 1000,
+          "uid": 1000,
+          "shell": "/bin/bash",
+          "gecos": "Operations Manager,,,"
+        },
+        "ntp": {
+          "dir": "/home/ntp",
+          "gid": 113,
+          "uid": 108,
+          "shell": "/bin/false",
+          "gecos": ""
+        }
+      },
+      "group": {
+        "root": {
+          "gid": 0,
+          "members": [
+
+          ]
+        },
+        "daemon": {
+          "gid": 1,
+          "members": [
+
+          ]
+        },
+        "bin": {
+          "gid": 2,
+          "members": [
+
+          ]
+        },
+        "sys": {
+          "gid": 3,
+          "members": [
+
+          ]
+        },
+        "adm": {
+          "gid": 4,
+          "members": [
+
+          ]
+        },
+        "tty": {
+          "gid": 5,
+          "members": [
+
+          ]
+        },
+        "disk": {
+          "gid": 6,
+          "members": [
+
+          ]
+        },
+        "lp": {
+          "gid": 7,
+          "members": [
+
+          ]
+        },
+        "mail": {
+          "gid": 8,
+          "members": [
+
+          ]
+        },
+        "news": {
+          "gid": 9,
+          "members": [
+
+          ]
+        },
+        "uucp": {
+          "gid": 10,
+          "members": [
+
+          ]
+        },
+        "man": {
+          "gid": 12,
+          "members": [
+
+          ]
+        },
+        "proxy": {
+          "gid": 13,
+          "members": [
+
+          ]
+        },
+        "kmem": {
+          "gid": 15,
+          "members": [
+
+          ]
+        },
+        "dialout": {
+          "gid": 20,
+          "members": [
+
+          ]
+        },
+        "fax": {
+          "gid": 21,
+          "members": [
+
+          ]
+        },
+        "voice": {
+          "gid": 22,
+          "members": [
+
+          ]
+        },
+        "cdrom": {
+          "gid": 24,
+          "members": [
+            "opergrid"
+          ]
+        },
+        "floppy": {
+          "gid": 25,
+          "members": [
+            "opergrid"
+          ]
+        },
+        "tape": {
+          "gid": 26,
+          "members": [
+
+          ]
+        },
+        "sudo": {
+          "gid": 27,
+          "members": [
+
+          ]
+        },
+        "audio": {
+          "gid": 29,
+          "members": [
+            "opergrid"
+          ]
+        },
+        "dip": {
+          "gid": 30,
+          "members": [
+            "opergrid"
+          ]
+        },
+        "www-data": {
+          "gid": 33,
+          "members": [
+
+          ]
+        },
+        "backup": {
+          "gid": 34,
+          "members": [
+
+          ]
+        },
+        "operator": {
+          "gid": 37,
+          "members": [
+
+          ]
+        },
+        "list": {
+          "gid": 38,
+          "members": [
+
+          ]
+        },
+        "irc": {
+          "gid": 39,
+          "members": [
+
+          ]
+        },
+        "src": {
+          "gid": 40,
+          "members": [
+
+          ]
+        },
+        "gnats": {
+          "gid": 41,
+          "members": [
+
+          ]
+        },
+        "shadow": {
+          "gid": 42,
+          "members": [
+
+          ]
+        },
+        "utmp": {
+          "gid": 43,
+          "members": [
+
+          ]
+        },
+        "video": {
+          "gid": 44,
+          "members": [
+            "opergrid"
+          ]
+        },
+        "sasl": {
+          "gid": 45,
+          "members": [
+
+          ]
+        },
+        "plugdev": {
+          "gid": 46,
+          "members": [
+            "opergrid"
+          ]
+        },
+        "staff": {
+          "gid": 50,
+          "members": [
+
+          ]
+        },
+        "games": {
+          "gid": 60,
+          "members": [
+
+          ]
+        },
+        "users": {
+          "gid": 100,
+          "members": [
+
+          ]
+        },
+        "nogroup": {
+          "gid": 65534,
+          "members": [
+
+          ]
+        },
+        "input": {
+          "gid": 101,
+          "members": [
+
+          ]
+        },
+        "systemd-journal": {
+          "gid": 102,
+          "members": [
+
+          ]
+        },
+        "systemd-timesync": {
+          "gid": 103,
+          "members": [
+
+          ]
+        },
+        "systemd-network": {
+          "gid": 104,
+          "members": [
+
+          ]
+        },
+        "systemd-resolve": {
+          "gid": 105,
+          "members": [
+
+          ]
+        },
+        "systemd-bus-proxy": {
+          "gid": 106,
+          "members": [
+
+          ]
+        },
+        "crontab": {
+          "gid": 107,
+          "members": [
+
+          ]
+        },
+        "netdev": {
+          "gid": 108,
+          "members": [
+            "opergrid"
+          ]
+        },
+        "Debian-exim": {
+          "gid": 109,
+          "members": [
+
+          ]
+        },
+        "messagebus": {
+          "gid": 110,
+          "members": [
+
+          ]
+        },
+        "mlocate": {
+          "gid": 111,
+          "members": [
+
+          ]
+        },
+        "ssh": {
+          "gid": 112,
+          "members": [
+
+          ]
+        },
+        "opergrid": {
+          "gid": 1000,
+          "members": [
+
+          ]
+        },
+        "ntp": {
+          "gid": 113,
+          "members": [
+
+          ]
+        },
+        "rvm": {
+          "gid": 1001,
+          "members": [
+
+          ]
+        },
+        "kvm": {
+          "gid": 114,
+          "members": [
+
+          ]
+        },
+        "utempter": {
+          "gid": 115,
+          "members": [
+
+          ]
+        }
+      }
+    },
+    "current_user": "root",
+    "root_group": "root",
+    "init_package": "systemd",
+    "cpu": {
+      "0": {
+        "vendor_id": "GenuineIntel",
+        "family": "6",
+        "model": "15",
+        "model_name": "Intel(R) Xeon(R) CPU           E5335  @ 2.00GHz",
+        "stepping": "7",
+        "mhz": "1995.064",
+        "cache_size": "4096 KB",
+        "physical_id": "0",
+        "core_id": "0",
+        "cores": "4",
+        "flags": [
+          "fpu",
+          "vme",
+          "de",
+          "pse",
+          "tsc",
+          "msr",
+          "pae",
+          "mce",
+          "cx8",
+          "apic",
+          "sep",
+          "mtrr",
+          "pge",
+          "mca",
+          "cmov",
+          "pat",
+          "pse36",
+          "clflush",
+          "dts",
+          "acpi",
+          "mmx",
+          "fxsr",
+          "sse",
+          "sse2",
+          "ss",
+          "ht",
+          "tm",
+          "pbe",
+          "syscall",
+          "nx",
+          "lm",
+          "constant_tsc",
+          "arch_perfmon",
+          "pebs",
+          "bts",
+          "rep_good",
+          "nopl",
+          "aperfmperf",
+          "pni",
+          "dtes64",
+          "monitor",
+          "ds_cpl",
+          "vmx",
+          "tm2",
+          "ssse3",
+          "cx16",
+          "xtpr",
+          "pdcm",
+          "dca",
+          "lahf_lm",
+          "dtherm",
+          "tpr_shadow"
+        ]
+      },
+      "1": {
+        "vendor_id": "GenuineIntel",
+        "family": "6",
+        "model": "15",
+        "model_name": "Intel(R) Xeon(R) CPU           E5335  @ 2.00GHz",
+        "stepping": "7",
+        "mhz": "1995.064",
+        "cache_size": "4096 KB",
+        "physical_id": "0",
+        "core_id": "2",
+        "cores": "4",
+        "flags": [
+          "fpu",
+          "vme",
+          "de",
+          "pse",
+          "tsc",
+          "msr",
+          "pae",
+          "mce",
+          "cx8",
+          "apic",
+          "sep",
+          "mtrr",
+          "pge",
+          "mca",
+          "cmov",
+          "pat",
+          "pse36",
+          "clflush",
+          "dts",
+          "acpi",
+          "mmx",
+          "fxsr",
+          "sse",
+          "sse2",
+          "ss",
+          "ht",
+          "tm",
+          "pbe",
+          "syscall",
+          "nx",
+          "lm",
+          "constant_tsc",
+          "arch_perfmon",
+          "pebs",
+          "bts",
+          "rep_good",
+          "nopl",
+          "aperfmperf",
+          "pni",
+          "dtes64",
+          "monitor",
+          "ds_cpl",
+          "vmx",
+          "tm2",
+          "ssse3",
+          "cx16",
+          "xtpr",
+          "pdcm",
+          "dca",
+          "lahf_lm",
+          "dtherm",
+          "tpr_shadow"
+        ]
+      },
+      "2": {
+        "vendor_id": "GenuineIntel",
+        "family": "6",
+        "model": "15",
+        "model_name": "Intel(R) Xeon(R) CPU           E5335  @ 2.00GHz",
+        "stepping": "7",
+        "mhz": "1995.064",
+        "cache_size": "4096 KB",
+        "physical_id": "1",
+        "core_id": "0",
+        "cores": "4",
+        "flags": [
+          "fpu",
+          "vme",
+          "de",
+          "pse",
+          "tsc",
+          "msr",
+          "pae",
+          "mce",
+          "cx8",
+          "apic",
+          "sep",
+          "mtrr",
+          "pge",
+          "mca",
+          "cmov",
+          "pat",
+          "pse36",
+          "clflush",
+          "dts",
+          "acpi",
+          "mmx",
+          "fxsr",
+          "sse",
+          "sse2",
+          "ss",
+          "ht",
+          "tm",
+          "pbe",
+          "syscall",
+          "nx",
+          "lm",
+          "constant_tsc",
+          "arch_perfmon",
+          "pebs",
+          "bts",
+          "rep_good",
+          "nopl",
+          "aperfmperf",
+          "pni",
+          "dtes64",
+          "monitor",
+          "ds_cpl",
+          "vmx",
+          "tm2",
+          "ssse3",
+          "cx16",
+          "xtpr",
+          "pdcm",
+          "dca",
+          "lahf_lm",
+          "dtherm",
+          "tpr_shadow"
+        ]
+      },
+      "3": {
+        "vendor_id": "GenuineIntel",
+        "family": "6",
+        "model": "15",
+        "model_name": "Intel(R) Xeon(R) CPU           E5335  @ 2.00GHz",
+        "stepping": "7",
+        "mhz": "1995.064",
+        "cache_size": "4096 KB",
+        "physical_id": "1",
+        "core_id": "2",
+        "cores": "4",
+        "flags": [
+          "fpu",
+          "vme",
+          "de",
+          "pse",
+          "tsc",
+          "msr",
+          "pae",
+          "mce",
+          "cx8",
+          "apic",
+          "sep",
+          "mtrr",
+          "pge",
+          "mca",
+          "cmov",
+          "pat",
+          "pse36",
+          "clflush",
+          "dts",
+          "acpi",
+          "mmx",
+          "fxsr",
+          "sse",
+          "sse2",
+          "ss",
+          "ht",
+          "tm",
+          "pbe",
+          "syscall",
+          "nx",
+          "lm",
+          "constant_tsc",
+          "arch_perfmon",
+          "pebs",
+          "bts",
+          "rep_good",
+          "nopl",
+          "aperfmperf",
+          "pni",
+          "dtes64",
+          "monitor",
+          "ds_cpl",
+          "vmx",
+          "tm2",
+          "ssse3",
+          "cx16",
+          "xtpr",
+          "pdcm",
+          "dca",
+          "lahf_lm",
+          "dtherm",
+          "tpr_shadow"
+        ]
+      },
+      "4": {
+        "vendor_id": "GenuineIntel",
+        "family": "6",
+        "model": "15",
+        "model_name": "Intel(R) Xeon(R) CPU           E5335  @ 2.00GHz",
+        "stepping": "7",
+        "mhz": "1995.064",
+        "cache_size": "4096 KB",
+        "physical_id": "0",
+        "core_id": "1",
+        "cores": "4",
+        "flags": [
+          "fpu",
+          "vme",
+          "de",
+          "pse",
+          "tsc",
+          "msr",
+          "pae",
+          "mce",
+          "cx8",
+          "apic",
+          "sep",
+          "mtrr",
+          "pge",
+          "mca",
+          "cmov",
+          "pat",
+          "pse36",
+          "clflush",
+          "dts",
+          "acpi",
+          "mmx",
+          "fxsr",
+          "sse",
+          "sse2",
+          "ss",
+          "ht",
+          "tm",
+          "pbe",
+          "syscall",
+          "nx",
+          "lm",
+          "constant_tsc",
+          "arch_perfmon",
+          "pebs",
+          "bts",
+          "rep_good",
+          "nopl",
+          "aperfmperf",
+          "pni",
+          "dtes64",
+          "monitor",
+          "ds_cpl",
+          "vmx",
+          "tm2",
+          "ssse3",
+          "cx16",
+          "xtpr",
+          "pdcm",
+          "dca",
+          "lahf_lm",
+          "dtherm",
+          "tpr_shadow"
+        ]
+      },
+      "5": {
+        "vendor_id": "GenuineIntel",
+        "family": "6",
+        "model": "15",
+        "model_name": "Intel(R) Xeon(R) CPU           E5335  @ 2.00GHz",
+        "stepping": "7",
+        "mhz": "1995.064",
+        "cache_size": "4096 KB",
+        "physical_id": "0",
+        "core_id": "3",
+        "cores": "4",
+        "flags": [
+          "fpu",
+          "vme",
+          "de",
+          "pse",
+          "tsc",
+          "msr",
+          "pae",
+          "mce",
+          "cx8",
+          "apic",
+          "sep",
+          "mtrr",
+          "pge",
+          "mca",
+          "cmov",
+          "pat",
+          "pse36",
+          "clflush",
+          "dts",
+          "acpi",
+          "mmx",
+          "fxsr",
+          "sse",
+          "sse2",
+          "ss",
+          "ht",
+          "tm",
+          "pbe",
+          "syscall",
+          "nx",
+          "lm",
+          "constant_tsc",
+          "arch_perfmon",
+          "pebs",
+          "bts",
+          "rep_good",
+          "nopl",
+          "aperfmperf",
+          "pni",
+          "dtes64",
+          "monitor",
+          "ds_cpl",
+          "vmx",
+          "tm2",
+          "ssse3",
+          "cx16",
+          "xtpr",
+          "pdcm",
+          "dca",
+          "lahf_lm",
+          "dtherm",
+          "tpr_shadow"
+        ]
+      },
+      "6": {
+        "vendor_id": "GenuineIntel",
+        "family": "6",
+        "model": "15",
+        "model_name": "Intel(R) Xeon(R) CPU           E5335  @ 2.00GHz",
+        "stepping": "7",
+        "mhz": "1995.064",
+        "cache_size": "4096 KB",
+        "physical_id": "1",
+        "core_id": "1",
+        "cores": "4",
+        "flags": [
+          "fpu",
+          "vme",
+          "de",
+          "pse",
+          "tsc",
+          "msr",
+          "pae",
+          "mce",
+          "cx8",
+          "apic",
+          "sep",
+          "mtrr",
+          "pge",
+          "mca",
+          "cmov",
+          "pat",
+          "pse36",
+          "clflush",
+          "dts",
+          "acpi",
+          "mmx",
+          "fxsr",
+          "sse",
+          "sse2",
+          "ss",
+          "ht",
+          "tm",
+          "pbe",
+          "syscall",
+          "nx",
+          "lm",
+          "constant_tsc",
+          "arch_perfmon",
+          "pebs",
+          "bts",
+          "rep_good",
+          "nopl",
+          "aperfmperf",
+          "pni",
+          "dtes64",
+          "monitor",
+          "ds_cpl",
+          "vmx",
+          "tm2",
+          "ssse3",
+          "cx16",
+          "xtpr",
+          "pdcm",
+          "dca",
+          "lahf_lm",
+          "dtherm",
+          "tpr_shadow"
+        ]
+      },
+      "7": {
+        "vendor_id": "GenuineIntel",
+        "family": "6",
+        "model": "15",
+        "model_name": "Intel(R) Xeon(R) CPU           E5335  @ 2.00GHz",
+        "stepping": "7",
+        "mhz": "1995.064",
+        "cache_size": "4096 KB",
+        "physical_id": "1",
+        "core_id": "3",
+        "cores": "4",
+        "flags": [
+          "fpu",
+          "vme",
+          "de",
+          "pse",
+          "tsc",
+          "msr",
+          "pae",
+          "mce",
+          "cx8",
+          "apic",
+          "sep",
+          "mtrr",
+          "pge",
+          "mca",
+          "cmov",
+          "pat",
+          "pse36",
+          "clflush",
+          "dts",
+          "acpi",
+          "mmx",
+          "fxsr",
+          "sse",
+          "sse2",
+          "ss",
+          "ht",
+          "tm",
+          "pbe",
+          "syscall",
+          "nx",
+          "lm",
+          "constant_tsc",
+          "arch_perfmon",
+          "pebs",
+          "bts",
+          "rep_good",
+          "nopl",
+          "aperfmperf",
+          "pni",
+          "dtes64",
+          "monitor",
+          "ds_cpl",
+          "vmx",
+          "tm2",
+          "ssse3",
+          "cx16",
+          "xtpr",
+          "pdcm",
+          "dca",
+          "lahf_lm",
+          "dtherm",
+          "tpr_shadow"
+        ]
+      },
+      "total": 8,
+      "real": 2
+    },
+    "memory": {
+      "swap": {
+        "cached": "32kB",
+        "total": "8374268kB",
+        "free": "8369116kB"
+      },
+      "total": "4052552kB",
+      "free": "791964kB",
+      "buffers": "91196kB",
+      "cached": "2765692kB",
+      "active": "1453272kB",
+      "inactive": "1511984kB",
+      "dirty": "12396kB",
+      "writeback": "0kB",
+      "anon_pages": "108620kB",
+      "mapped": "21244kB",
+      "slab": "262100kB",
+      "slab_reclaimable": "241520kB",
+      "slab_unreclaim": "20580kB",
+      "page_tables": "2744kB",
+      "nfs_unstable": "0kB",
+      "bounce": "0kB",
+      "commit_limit": "10400544kB",
+      "committed_as": "217128kB",
+      "vmalloc_total": "34359738367kB",
+      "vmalloc_used": "273996kB",
+      "vmalloc_chunk": "34359461319kB"
+    },
+    "filesystem": {
+      "/dev/sda1": {
+        "kb_size": "231988224",
+        "kb_used": "8902008",
+        "kb_available": "211278780",
+        "percent_used": "5%",
+        "mount": "/",
+        "total_inodes": "14745600",
+        "inodes_used": "152896",
+        "inodes_available": "14592704",
+        "inodes_percent_used": "2%",
+        "fs_type": "ext4",
+        "mount_options": [
+          "rw",
+          "relatime",
+          "errors=remount-ro",
+          "data=ordered"
+        ],
+        "uuid": "c67d858b-3b0f-448c-8013-f07ed58698f7"
+      },
+      "udev": {
+        "kb_size": "10240",
+        "kb_used": "0",
+        "kb_available": "10240",
+        "percent_used": "0%",
+        "mount": "/dev",
+        "total_inodes": "504487",
+        "inodes_used": "333",
+        "inodes_available": "504154",
+        "inodes_percent_used": "1%",
+        "fs_type": "devtmpfs",
+        "mount_options": [
+          "rw",
+          "relatime",
+          "size=10240k",
+          "nr_inodes=504487",
+          "mode=755"
+        ]
+      },
+      "tmpfs": {
+        "kb_size": "2026276",
+        "kb_used": "0",
+        "kb_available": "2026276",
+        "percent_used": "0%",
+        "mount": "/sys/fs/cgroup",
+        "total_inodes": "506569",
+        "inodes_used": "13",
+        "inodes_available": "506556",
+        "inodes_percent_used": "1%",
+        "fs_type": "tmpfs",
+        "mount_options": [
+          "ro",
+          "nosuid",
+          "nodev",
+          "noexec",
+          "mode=755"
+        ]
+      },
+      "sysfs": {
+        "mount": "/sys",
+        "fs_type": "sysfs",
+        "mount_options": [
+          "rw",
+          "nosuid",
+          "nodev",
+          "noexec",
+          "relatime"
+        ]
+      },
+      "proc": {
+        "mount": "/proc",
+        "fs_type": "proc",
+        "mount_options": [
+          "rw",
+          "nosuid",
+          "nodev",
+          "noexec",
+          "relatime"
+        ]
+      },
+      "devpts": {
+        "mount": "/dev/pts",
+        "fs_type": "devpts",
+        "mount_options": [
+          "rw",
+          "nosuid",
+          "noexec",
+          "relatime",
+          "gid=5",
+          "mode=620",
+          "ptmxmode=000"
+        ]
+      },
+      "securityfs": {
+        "mount": "/sys/kernel/security",
+        "fs_type": "securityfs",
+        "mount_options": [
+          "rw",
+          "nosuid",
+          "nodev",
+          "noexec",
+          "relatime"
+        ]
+      },
+      "cgroup": {
+        "mount": "/sys/fs/cgroup/perf_event",
+        "fs_type": "cgroup",
+        "mount_options": [
+          "rw",
+          "nosuid",
+          "nodev",
+          "noexec",
+          "relatime",
+          "perf_event"
+        ]
+      },
+      "pstore": {
+        "mount": "/sys/fs/pstore",
+        "fs_type": "pstore",
+        "mount_options": [
+          "rw",
+          "nosuid",
+          "nodev",
+          "noexec",
+          "relatime"
+        ]
+      },
+      "systemd-1": {
+        "mount": "/proc/sys/fs/binfmt_misc",
+        "fs_type": "autofs",
+        "mount_options": [
+          "rw",
+          "relatime",
+          "fd=22",
+          "pgrp=1",
+          "timeout=300",
+          "minproto=5",
+          "maxproto=5",
+          "direct"
+        ]
+      },
+      "mqueue": {
+        "mount": "/dev/mqueue",
+        "fs_type": "mqueue",
+        "mount_options": [
+          "rw",
+          "relatime"
+        ]
+      },
+      "hugetlbfs": {
+        "mount": "/dev/hugepages",
+        "fs_type": "hugetlbfs",
+        "mount_options": [
+          "rw",
+          "relatime"
+        ]
+      },
+      "debugfs": {
+        "mount": "/sys/kernel/debug",
+        "fs_type": "debugfs",
+        "mount_options": [
+          "rw",
+          "relatime"
+        ]
+      },
+      "rpc_pipefs": {
+        "mount": "/run/rpc_pipefs",
+        "fs_type": "rpc_pipefs",
+        "mount_options": [
+          "rw",
+          "relatime"
+        ]
+      },
+      "/dev/sda5": {
+        "fs_type": "swap",
+        "uuid": "41f42596-99be-4584-9927-020d603e79e6"
+      },
+      "rootfs": {
+        "mount": "/",
+        "fs_type": "rootfs",
+        "mount_options": [
+          "rw"
+        ]
+      }
+    },
+    "ip6address": "fe80::215:17ff:fe1f:6ea8",
+    "command": {
+      "ps": "ps -ef"
+    },
+    "cloud_v2": null,
+    "dmi": {
+      "dmidecode_version": "2.12",
+      "smbios_version": "2.5",
+      "structures": {
+        "count": "53",
+        "size": "2073"
+      },
+      "system": {
+        "all_records": [
+          {
+            "record_id": "0x0002",
+            "size": "1",
+            "application_identifier": "System Information",
+            "Manufacturer": "Intel",
+            "Product Name": "S5000VCL",
+            "Version": "Not Specified",
+            "Serial Number": ".........",
+            "UUID": "BE409B01-6EA0-11DC-87E3-0015171F6EA8",
+            "Wake-up Type": "Power Switch",
+            "SKU Number": "..........",
+            "Family": "Not Specified"
+          }
+        ],
+        "manufacturer": "Intel",
+        "product_name": "S5000VCL",
+        "version": "Not Specified",
+        "serial_number": ".........",
+        "uuid": "BE409B01-6EA0-11DC-87E3-0015171F6EA8",
+        "wake_up_type": "Power Switch",
+        "sku_number": "..........",
+        "family": "Not Specified"
+      },
+      "base_board": {
+        "all_records": [
+          {
+            "record_id": "0x0003",
+            "size": "2",
+            "application_identifier": "Base Board Information",
+            "Manufacturer": "Intel",
+            "Product Name": "S5000VCL",
+            "Version": "Not Specified",
+            "Serial Number": "QSCL73900075",
+            "Asset Tag": "Not Specified",
+            "Features": {
+              "Board is a hosting board": null,
+              "Board is replaceable": null
+            },
+            "Location In Chassis": "Not Specified",
+            "Chassis Handle": "0x0000",
+            "Type": "Motherboard",
+            "Contained Object Handles": "0"
+          }
+        ],
+        "manufacturer": "Intel",
+        "product_name": "S5000VCL",
+        "version": "Not Specified",
+        "serial_number": "QSCL73900075",
+        "asset_tag": "Not Specified",
+        "location_in_chassis": "Not Specified",
+        "chassis_handle": "0x0000",
+        "type": "Motherboard",
+        "contained_object_handles": "0"
+      },
+      "chassis": {
+        "all_records": [
+          {
+            "record_id": "0x0004",
+            "size": "3",
+            "application_identifier": "Chassis Information",
+            "Manufacturer": "Not Specified",
+            "Type": "Main Server Chassis",
+            "Lock": "Not Present",
+            "Version": "Not Specified",
+            "Serial Number": "Not Specified",
+            "Asset Tag": "Not Specified",
+            "Boot-up State": "Safe",
+            "Power Supply State": "Safe",
+            "Thermal State": "Safe",
+            "Security Status": "Unknown",
+            "OEM Information": "0x81581CF8",
+            "Height": "1 U",
+            "Number Of Power Cords": "1",
+            "Contained Elements": "0",
+            "SKU Number": "Not Specified"
+          }
+        ],
+        "manufacturer": "Not Specified",
+        "type": "Main Server Chassis",
+        "lock": "Not Present",
+        "version": "Not Specified",
+        "serial_number": "Not Specified",
+        "asset_tag": "Not Specified",
+        "boot_up_state": "Safe",
+        "power_supply_state": "Safe",
+        "thermal_state": "Safe",
+        "security_status": "Unknown",
+        "oem_information": "0x81581CF8",
+        "height": "1 U",
+        "number_of_power_cords": "1",
+        "contained_elements": "0",
+        "sku_number": "Not Specified"
+      },
+      "bios": {
+        "all_records": [
+          {
+            "record_id": "0x0005",
+            "size": "0",
+            "application_identifier": "BIOS Information",
+            "Vendor": "Intel Corporation",
+            "Version": "S5000.86B.10.00.0085.112920071426",
+            "Release Date": "11/29/2007",
+            "Address": "0xE8000",
+            "Runtime Size": "96 kB",
+            "ROM Size": "4096 kB",
+            "Characteristics": {
+              "PCI is supported": null,
+              "PNP is supported": null,
+              "BIOS is upgradeable": null,
+              "BIOS shadowing is allowed": null,
+              "Boot from CD is supported": null,
+              "Selectable boot is supported": null,
+              "EDD is supported": null,
+              "Print screen service is supported (int 5h)": null,
+              "8042 keyboard services are supported (int 9h)": null,
+              "Serial services are supported (int 14h)": null,
+              "CGA/mono video services are supported (int 10h)": null,
+              "ACPI is supported": null,
+              "USB legacy is supported": null,
+              "LS-120 boot is supported": null,
+              "ATAPI Zip drive boot is supported": null,
+              "BIOS boot specification is supported": null,
+              "Function key-initiated network boot is supported": null,
+              "Targeted content distribution is supported": null
+            },
+            "BIOS Revision": "10.0",
+            "Firmware Revision": "0.0"
+          }
+        ],
+        "vendor": "Intel Corporation",
+        "version": "S5000.86B.10.00.0085.112920071426",
+        "release_date": "11/29/2007",
+        "address": "0xE8000",
+        "runtime_size": "96 kB",
+        "rom_size": "4096 kB",
+        "bios_revision": "10.0",
+        "firmware_revision": "0.0"
+      },
+      "oem_strings": {
+        "all_records": [
+          {
+            "record_id": "0x0022",
+            "size": "11",
+            "application_identifier": "OEM Strings",
+            "String 1": " ",
+            "String 2": " ",
+            "String 3": " ",
+            "String 4": " ",
+            "String 5": " "
+          }
+        ],
+        "string_1": "",
+        "string_2": "",
+        "string_3": "",
+        "string_4": "",
+        "string_5": ""
+      },
+      "processor": {
+        "all_records": [
+          {
+            "record_id": "0x0024",
+            "size": "4",
+            "application_identifier": "Processor Information",
+            "Socket Designation": "CPU1",
+            "Type": "Central Processor",
+            "Family": "Xeon",
+            "Manufacturer": "Intel(R) Corporation",
+            "ID": "F7 06 00 00 FF FB EB BF",
+            "Signature": "Type 0, Family 6, Model 15, Stepping 7",
+            "Flags": {
+              "FPU (Floating-point unit on-chip)": null,
+              "VME (Virtual mode extension)": null,
+              "DE (Debugging extension)": null,
+              "PSE (Page size extension)": null,
+              "TSC (Time stamp counter)": null,
+              "MSR (Model specific registers)": null,
+              "PAE (Physical address extension)": null,
+              "MCE (Machine check exception)": null,
+              "CX8 (CMPXCHG8 instruction supported)": null,
+              "APIC (On-chip APIC hardware supported)": null,
+              "SEP (Fast system call)": null,
+              "MTRR (Memory type range registers)": null,
+              "PGE (Page global enable)": null,
+              "MCA (Machine check architecture)": null,
+              "CMOV (Conditional move instruction supported)": null,
+              "PAT (Page attribute table)": null,
+              "PSE-36 (36-bit page size extension)": null,
+              "CLFSH (CLFLUSH instruction supported)": null,
+              "DS (Debug store)": null,
+              "ACPI (ACPI supported)": null,
+              "MMX (MMX technology supported)": null,
+              "FXSR (FXSAVE and FXSTOR instructions supported)": null,
+              "SSE (Streaming SIMD extensions)": null,
+              "SSE2 (Streaming SIMD extensions 2)": null,
+              "SS (Self-snoop)": null,
+              "HTT (Multi-threading)": null,
+              "TM (Thermal monitor supported)": null,
+              "PBE (Pending break enabled)": null
+            },
+            "Version": "Intel(R) Xeon(R) CPU           E5335  @ 2.00GHz",
+            "Voltage": "1.2 V",
+            "External Clock": "1333 MHz",
+            "Max Speed": "2000 MHz",
+            "Current Speed": "2000 MHz",
+            "Status": "Populated, Enabled",
+            "Upgrade": "ZIF Socket",
+            "L1 Cache Handle": "0x0026",
+            "L2 Cache Handle": "0x0025",
+            "L3 Cache Handle": "Not Provided",
+            "Serial Number": "Not Specified",
+            "Asset Tag": "Not Specified",
+            "Part Number": "Not Specified",
+            "Core Count": "4",
+            "Core Enabled": "4",
+            "Thread Count": "4",
+            "Characteristics": {
+              "64-bit capable": null
+            }
+          },
+          {
+            "record_id": "0x0027",
+            "size": "4",
+            "application_identifier": "Processor Information",
+            "Socket Designation": "CPU2",
+            "Type": "Central Processor",
+            "Family": "Xeon",
+            "Manufacturer": "Intel(R) Corporation",
+            "ID": "F7 06 00 00 FF FB EB BF",
+            "Signature": "Type 0, Family 6, Model 15, Stepping 7",
+            "Flags": {
+              "FPU (Floating-point unit on-chip)": null,
+              "VME (Virtual mode extension)": null,
+              "DE (Debugging extension)": null,
+              "PSE (Page size extension)": null,
+              "TSC (Time stamp counter)": null,
+              "MSR (Model specific registers)": null,
+              "PAE (Physical address extension)": null,
+              "MCE (Machine check exception)": null,
+              "CX8 (CMPXCHG8 instruction supported)": null,
+              "APIC (On-chip APIC hardware supported)": null,
+              "SEP (Fast system call)": null,
+              "MTRR (Memory type range registers)": null,
+              "PGE (Page global enable)": null,
+              "MCA (Machine check architecture)": null,
+              "CMOV (Conditional move instruction supported)": null,
+              "PAT (Page attribute table)": null,
+              "PSE-36 (36-bit page size extension)": null,
+              "CLFSH (CLFLUSH instruction supported)": null,
+              "DS (Debug store)": null,
+              "ACPI (ACPI supported)": null,
+              "MMX (MMX technology supported)": null,
+              "FXSR (FXSAVE and FXSTOR instructions supported)": null,
+              "SSE (Streaming SIMD extensions)": null,
+              "SSE2 (Streaming SIMD extensions 2)": null,
+              "SS (Self-snoop)": null,
+              "HTT (Multi-threading)": null,
+              "TM (Thermal monitor supported)": null,
+              "PBE (Pending break enabled)": null
+            },
+            "Version": "Intel(R) Xeon(R) CPU           E5335  @ 2.00GHz",
+            "Voltage": "1.2 V",
+            "External Clock": "1333 MHz",
+            "Max Speed": "2000 MHz",
+            "Current Speed": "2000 MHz",
+            "Status": "Populated, Enabled",
+            "Upgrade": "ZIF Socket",
+            "L1 Cache Handle": "0x0029",
+            "L2 Cache Handle": "0x0028",
+            "L3 Cache Handle": "Not Provided",
+            "Serial Number": "Not Specified",
+            "Asset Tag": "Not Specified",
+            "Part Number": "Not Specified",
+            "Core Count": "4",
+            "Core Enabled": "4",
+            "Thread Count": "4",
+            "Characteristics": {
+              "64-bit capable": null
+            }
+          }
+        ],
+        "type": "Central Processor",
+        "family": "Xeon",
+        "manufacturer": "Intel(R) Corporation",
+        "id": "F7 06 00 00 FF FB EB BF",
+        "signature": "Type 0, Family 6, Model 15, Stepping 7",
+        "version": "Intel(R) Xeon(R) CPU           E5335  @ 2.00GHz",
+        "voltage": "1.2 V",
+        "external_clock": "1333 MHz",
+        "max_speed": "2000 MHz",
+        "current_speed": "2000 MHz",
+        "status": "Populated, Enabled",
+        "upgrade": "ZIF Socket",
+        "l3_cache_handle": "Not Provided",
+        "serial_number": "Not Specified",
+        "asset_tag": "Not Specified",
+        "part_number": "Not Specified",
+        "core_count": "4",
+        "core_enabled": "4",
+        "thread_count": "4"
+      }
+    },
+    "uptime_seconds": 932961,
+    "uptime": "10 days 19 hours 09 minutes 21 seconds",
+    "idletime_seconds": 7456320,
+    "idletime": "86 days 07 hours 12 minutes 00 seconds",
+    "ohai_time": 1438341785.9358866,
+    "hostname": "dev1",
+    "machinename": "dev1",
+    "fqdn": "dev1.grid.basnet.by",
+    "domain": "grid.basnet.by",
+    "block_device": {
+      "sda": {
+        "size": "488395055",
+        "removable": "0",
+        "model": "ST3250620AS",
+        "rev": "K",
+        "state": "running",
+        "timeout": "30",
+        "vendor": "ATA",
+        "rotational": "1"
+      },
+      "sr0": {
+        "size": "2097151",
+        "removable": "1",
+        "model": "DVD RW AD-7543A",
+        "rev": "1-00",
+        "state": "running",
+        "timeout": "30",
+        "vendor": "Optiarc",
+        "rotational": "1"
+      }
+    },
+    "recipes": [
+      "gitlab-omnibus-builder::default",
+      "gitlab-omnibus-builder::ruby",
+      "gitlab-omnibus-builder::omnibus-build"
+    ],
+    "expanded_run_list": [
+      "gitlab-omnibus-builder::default"
+    ],
+    "roles": [
+
+    ],
+    "cookbooks": {
+      "gitlab-omnibus-builder": {
+        "version": "0.2.6"
+      },
+      "gitlab-attributes-with-secrets": {
+        "version": "0.1.0"
+      }
+    }
+  },
+  "run_list": [
+    "recipe[gitlab-omnibus-builder::default]"
+  ]
+}

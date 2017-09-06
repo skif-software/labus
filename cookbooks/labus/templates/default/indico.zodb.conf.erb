@@ -1,0 +1,15 @@
+<zeo>
+address localhost:9675
+monitor-address localhost:8091
+</zeo>
+
+<filestorage 1>
+path <%= @work_dir %>/db/Data.fs
+</filestorage>
+
+<eventlog>
+<logfile>
+path <%= @log_dir %>/zeo.log
+format %(asctime)s %(message)s
+</logfile>
+</eventlog>

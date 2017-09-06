@@ -1,0 +1,4 @@
+#!/bin/sh
+exec 2>&1
+<%= render("mount_point_check.erb") %>
+exec chpst -P <%= node['labus']['ldap']['slapd'] %> <%= @options[:slapd_options] %>

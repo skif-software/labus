@@ -1,0 +1,65 @@
+name "indico"
+#default_version "1.2.1rc1"
+default_version "88a55a686fb4e6c3e326cd5f269b2ea147c37adf" # 1.9.4 merged with branch v1.9.3
+
+
+dependency "python"
+#dependency "pip"
+dependency "libxml2"
+dependency "libxslt"
+dependency "libffi"
+dependency "postgresql"
+
+version("1.2.1rc1") { source md5: "d8fe8f082865958e7fcd845928d141f6" }
+
+#source url: "https://github.com/indico/indico/releases/download/v1.2.1rc1/indico-#{version}-py2.7.egg"
+#source url: "https://github.com/indico/indico/archive/v#{version}.zip"
+source :git => "https://github.com/indico/indico.git"
+
+relative_path "indico-#{version}"
+
+SRC_DIR = "#{Omnibus::Config.source_dir}"
+
+build do
+#  copy 'config/database.yml.example', 'config/database.yml'
+#  command %[sed -i \"s/mysql2/postgresql/g\" config/database.yml]
+#  command %[echo '## Application server' >> Gemfile.local; \
+#            echo 'group :unicorn do' >> Gemfile.local; \
+#            echo '  gem "unicorn", "~> 4.6.3"' >> Gemfile.local; \
+#            echo '  gem "unicorn-worker-killer"' >> Gemfile.local; \
+#            echo 'end' >> Gemfile.local]
+
+  # in order to install Indico you have to satisfy all the dependencies on build machine:
+  # apt-get install build-essential python-dev python-pip libxslt-dev libxml2-dev libffi-dev postgresql postgresql-server-dev-all
+  env = with_standard_compiler_flags(with_embedded_path)
+  command "easy_install https://github.com/indico/indico/releases/download/v1.2.0/indico-1.2-py2.7.egg", :env => env
+  command "easy_install https://github.com/indico/indico/releases/download/v1.2.1rc1/indico-1.2.1rc1-py2.7.egg", :env => env
+  command "chmod 0644 /opt/gitlab/embedded/lib/python2.7/site-packages/zc.queue-1.3-py2.7.egg/EGG-INFO/*"
+  # upgrade bcrypt in order to build it on build machine with GCC
+##  command "pip install bcrypt --upgrade", :env => env
+  # upgrade zc.queue in order to install new version not to
+  # chmod -R 0766 /opt/gitlab/embedded/lib/python2.7/site-packages/zc.queue-1.3-py2.7.egg/EGG-INFO/
+##  command "pip install zc.queue --upgrade", :env => env
+
+#  command "easy_install indico", :env => env
+##  command "pip install -r requirements.txt", :env => env
+##  command "pip install -r requirements.dev.txt", :env => env
+  #command "fab setup_deps", cwd: "#{SRC_DIR}/#{relative_path}/indico", :env => env
+##  command "fab setup_deps", :env => env
+##  command "python setup.py install", :env => env
+  ### install app server https://uwsgi-docs.readthedocs.org/en/latest/Install.html
+  command "pip install uwsgi", :env => env
+  ### install another app server http://gunicorn.org/
+  command "pip install gunicorn", :env => env
+
+#  command "pip install -r requirements.txt", :env => env
+#  command "python setup.py install", :env => env
+##  gem "update bundler", env: env
+##  bundle "install --without development test rmagick", env: env
+#
+#  bundle_without = %w{development test rmagick}
+#  bundle "install --without #{bundle_without.join(" ")} --path=#{install_dir}/embedded/service/gem --jobs #{workers}", :env => env
+#
+#  mkdir "#{install_dir}/embedded/service/redmine-rails"
+#  command "#{install_dir}/embedded/bin/rsync -a --delete --exclude=.git/*** --exclude=.gitignore ./ #{install_dir}/embedded/service/indico/"
+end

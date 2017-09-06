@@ -1,0 +1,4 @@
+#!/bin/sh
+exec 2>&1
+<%= render("mount_point_check.erb") %>
+exec chpst -P <%= node['labus']['php-fpm']['executable'] %> --fpm-config <%= node['labus']['php-fpm']['config'] %> --pid <%= File.join(node['labus']['php-fpm']['dir'], "php-fpm.pid") %>
